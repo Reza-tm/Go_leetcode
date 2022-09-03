@@ -4,18 +4,14 @@ import "fmt"
 
 func main() {
 	exArr := []int{3, 1, 2, 10, 1}
-	runningSum(exArr)
+	fmt.Println(runningSum(exArr))
 }
 
 func runningSum(nums []int) []int {
-	tmp := []int{}
-	for idx, _ := range nums {
-		sum := 0
-		for i := 0; i <= idx; i++ {
-			fmt.Println(nums[i])
-			sum += nums[i]
-		}
-		tmp = append(tmp, sum)
+	var tmp = make([]int, len(nums))
+	tmp[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		tmp[i] = nums[i] + tmp[i-1]
 	}
 	return tmp
 }
