@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arr := fuzzBuzz(5)
+	arr := fuzzBuzz(50000)
 	fmt.Println(arr)
 }
 
